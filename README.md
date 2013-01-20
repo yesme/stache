@@ -72,8 +72,9 @@ Compile into file, load later then render:
 
 ### Controls
 - {@keyword ...; @keyword ...}
-- context: {@with expression}, {@end}
-  - it enables: {@with func(a, b) | filter | filter}
+- context: {@with expression:name}, {@end}
+  - it enables: {@with func(a, b) | filter | filter : name}
+  - name is optional, if expression is trival or it will not be refered by name in the future
 - control flow: {@if expression-statement}, {@elseif expression-statement}, {@else}, (@end}
   - it enables: {@if val; @with val}
 - loop (TBD): {@each ?, %should contain key, value or i, value}, {@each i in [expression : expression]}
