@@ -27,17 +27,17 @@ Some implementation details that may be considered:
 Typical Workflows
 -----------------
 
-In-place render:
+### In-place render:
 
     stache.render(tmpl, context)
 
-Compile once at runtime, render many times:
+### Compile once at runtime, render many times:
 
     tmpl_ = stache.compile(tmpl)
     tmpl_.render(context1)
     tmpl_.render(context2)
 
-Compile into file, load later then render:
+### Compile into file, load later then render:
 
     tmpl_ = stache.compile(tmpl)
     tmpl_.store("compiled.tmpl")
@@ -51,12 +51,12 @@ Compile into file, load later then render:
 
 ### Values
 - value: 
-  - {$val}
-  - {$this} - refer to the whole context
-  - {$val.field}
-  - {$val[expression]}
-  - {$../upper_context_val}
-  - {$/absolute_context_val}
+  - {=val}
+  - {=this} - refer to the whole context
+  - {=val.field}
+  - {=val[expression]}
+  - {=../upper_context_val}
+  - {=/absolute_context_val}
 - function:
   - name as same as {$function}, resolving follow the context chain
   - func_name(param1, param2, ...)
@@ -72,15 +72,21 @@ Compile into file, load later then render:
 
 ### Controls
 - {@keyword ...; @keyword ...}
+- controls and their "end" are paired
 - context: {@with expression:name}, {@end}
   - it enables: {@with func(a, b) | filter | filter : name}
   - name is optional, if expression is trival or it will not be refered by name in the future
 - control flow: {@if expression-statement}, {@elseif expression-statement}, {@else}, (@end}
   - it enables: {@if val; @with val}
-- loop (TBD): {@each ?, %should contain key, value or i, value}, {@each i in [expression : expression]}
+  - context v.s field: they are different!
+- loop (TBD):
+  - integer loop: {@for i [expression : expression]}, {@end}
+  - array: {@for i [0 : val|length]; @with val[i] : elem}, {@end; @end}
+  - object: {@for key val; @with val.key : elem}, {@end; @end}
+  - array and object needs to be distinguished as strong typing language...
 
 ### Code Reuse
-- inclusion: {>"path/to/$whatever/abc.html” expression} - only value is allowed in the inclusion
+- inclusion: {>"path/to/{=whatever}/abc.html” expression} - only value is allowed in the inclusion
 - no block (see "why" section)
 - no extension (see "why" section)
 - how to locate the specific template is language/platform/scenario dependent
