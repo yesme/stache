@@ -53,8 +53,8 @@ Typical Workflows
 - value: 
   - {=val}
   - {=this} - refer to the whole context
-  - {=val.field}
-  - {=val[expression]}
+  - {=val.field}: equals to val["field"]
+  - {=val[expression]}: the expression can be anything. E.g.: given field="name", val[field] => val["name"] => val.name
   - {=../upper_context_val}
   - {=/absolute_context_val}
 - function:
