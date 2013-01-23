@@ -5,7 +5,10 @@
 
 {stache} is inspired by [{{mustache}}](http://mustache.github.com/), [handlebar](http://handlebarsjs.com/), [dust](http://akdubya.github.com/dustjs/) (and its [LinkedIn port](https://github.com/linkedin/dustjs)), [Django](https://docs.djangoproject.com/en/1.4/topics/templates/), [doT](https://github.com/olado/doT), [Smarty](http://www.smarty.net/), [Juicer](http://juicer.name/docs/docs.html), [Velocity](http://velocity.apache.org/), [Jinja2](http://jinja.pocoo.org/docs/) and [Clearsilver](http://www.clearsilver.net/).
 
-{stache} consists of two parts: (1) {stache} language spec and (2) target language implementation.
+{stache} consists of two parts:
+
+1. {stache} Template Language
+2. Implementation for the target language
 
 Design Principles
 -----------------
