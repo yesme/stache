@@ -1,5 +1,5 @@
-{stache} [DRAFT]
-================
+{stache}
+========
 
 {stache} is yet another mustached template system.  It is named after the fact all {stache} specific expressions are quoted by {}, although it's configrable.
 
