@@ -28,15 +28,18 @@
 
     <div class="container">
       <section id="main_content">
-        <h1>{stache} [DRAFT]</h1>
+        <h1>{stache}</h1>
 
 <p>{stache} is yet another mustached template system.  It is named after the fact all {stache} specific expressions are quoted by {}, although it's configrable.</p>
 
 <p>{stache} is inspired by <a href="http://mustache.github.com/">{{mustache}}</a>, <a href="http://handlebarsjs.com/">handlebar</a>, <a href="http://akdubya.github.com/dustjs/">dust</a> (and its <a href="https://github.com/linkedin/dustjs">LinkedIn port</a>), <a href="https://docs.djangoproject.com/en/1.4/topics/templates/">Django</a>, <a href="https://github.com/olado/doT">doT</a>, <a href="http://www.smarty.net/">Smarty</a>, <a href="http://juicer.name/docs/docs.html">Juicer</a>, <a href="http://velocity.apache.org/">Velocity</a>, <a href="http://jinja.pocoo.org/docs/">Jinja2</a> and <a href="http://www.clearsilver.net/">Clearsilver</a>.</p>
 
-<p>{stache} consists of two parts: (1) {stache} language spec and (2) target language implementation.</p>
+<p>{stache} consists of two parts:</p>
 
-<h2>Design Principles</h2>
+<ol>
+<li>{stache} Template Language</li>
+<li>Implementation for the target language</li>
+</ol><h2>Design Principles</h2>
 
 <ul>
 <li>performance, performance, performance: compile template into target language; cache</li>
