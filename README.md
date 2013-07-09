@@ -26,6 +26,8 @@ Some implementation details that may be considered:
 
 - async function definition to enable possible parallel execution
 - stream interface for rendering
+- support bigpipe by async module: content, js, css, alt
+- compile js css if needed given the global dependency
 
 Typical Workflows
 -----------------
